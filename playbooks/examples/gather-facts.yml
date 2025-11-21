@@ -1,0 +1,11 @@
+---
+- name: First playbook
+  hosts: myhosts
+  tasks:
+    - name: Gather facts
+      ansible.builtin.gather_facts:
+      register: facts
+
+    - name: Print facts
+      ansible.builtin.debug:
+        msg: Facts are {{ ansible_facts['ansible_bios_version'] }}  
